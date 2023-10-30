@@ -1,11 +1,10 @@
-money_capital = 0
-salary = 50000  
-spend = 60000  
-increase = 0.03
+def find_cp (group1, group2, d):
+    p1 = set(group1.split(d))
+    p2 = set(group2.split(d))
+    cp = p1.intersection(p2)
+    return sorted(cp)
 
-for month in range(10):
-    money_capital += salary  
-    money_capital -= spend
-    spend += spend * increase
+group1 = 'John,Anna,Peter,Lisa'
+group2 = 'Lisa,Michael,John'
 
-print('%.2f' %(-money_capital))    
+print(find_cp(group1, group2, ","))  
