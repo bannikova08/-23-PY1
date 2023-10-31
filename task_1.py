@@ -1,15 +1,16 @@
-def find_index(products, item):
-    if item in products:
-        return products.index(item)
-    else:
-        return None
-    
-products = ['apple', 'banana', 'orange', 'apple', 'grape']
+money_capital = 50000
+salary = 50000  
+spend = 60000  
+increase = 0.05
+months = 0
+budget=money_capital+salary
 
-item = 'apple'
-index = find_index(products, item)
-print(index)  
+while money_capital+salary >= spend:
+    budget += salary  
+    budget -= spend
+    if budget < 0:
+        break
+    spend += spend * increase
+    months+=1
 
-item = 'watermelon'
-index = find_index(products, item)
-print(index)  
+print(months)
